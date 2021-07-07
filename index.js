@@ -20,6 +20,6 @@ app.use('/api/generales', require('./routes/generales'));
 
 
 
-app.listen(process.env.PORT, ()=>{
+app.listen(process.env.PORT  || 5000, ()=>{
     console.log(`Servicio corriendo en el puerto ${process.env.PORT}` );
 })
