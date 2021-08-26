@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.title { 
+    font-size:36px!important;
+    font-weight:700!important;
+    padding: 10px !important;
+   
+}
+  .content {
+      padding:20px!important;
+  }
+  .button-excel{
+      background-color: rgb(34, 177, 93)!important;
+      color: rgb(233, 233, 233)!important;
+      margin-bottom:10px!important;
+  }
+
+  table {
+    width: 100%!important;
+  }

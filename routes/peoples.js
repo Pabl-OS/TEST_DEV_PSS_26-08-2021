@@ -16,8 +16,6 @@ router.post('/',[
     check('ApellidoMaterno','la ApellidoMaterno es obligatorio').not().isEmpty(),
     check('RFC','la RFC es obligatorio').not().isEmpty(),
     check('FechaNacimiento','la FechaNacimiento es obligatorio').not().isEmpty(),
-    check('UsuarioAgrega','la UsuarioAgrega es obligatorio').not().isEmpty(),
-    check('Activo','la Activo es obligatorio').not().isEmpty(),
     validarCampos,validarJWT
 ],InsertPeople);
 
@@ -35,10 +33,7 @@ router.put('/',[
     validarCampos,validarJWT
 ],UpdatePeople);
 
-router.delete('/',[
-    check('IdPersonaFisica','la Nombre es obligatorio').not().isEmpty(),
-    validarCampos,validarJWT
-],DeletePeople);
+router.delete('/:id',validarJWT,DeletePeople);
 
 
 

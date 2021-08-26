@@ -90,7 +90,8 @@ const UpdatePeople= async(req,res) =>{
 };
 // this for delete people to database
 const DeletePeople= async(req,res) =>{
-    const people = await Persons.deletePeople(req.body);
+    const {id} = req.params;
+    const people = await Persons.deletePeople(id);
     if (!people){
         return res.status(400).json({
             ok: false,

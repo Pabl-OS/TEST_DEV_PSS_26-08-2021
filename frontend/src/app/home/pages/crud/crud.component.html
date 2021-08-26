@@ -1,0 +1,27 @@
+
+
+
+<div class="container">
+  <h1 class="title mt-5">CRUD PARA PERSONAS FISICAS </h1>
+    <div class="row" >
+      <div class="col-md-3 mt-2" *ngFor="let people of peoples" >
+        <mat-card class="card"  >
+            <mat-card-title>{{people.Nombre}} </mat-card-title>
+            <mat-card-subtitle> {{people['ApellidoPaterno']}}  {{people['ApellidoMaterno']}}</mat-card-subtitle>
+          <mat-card-content>
+            <h3 class="text-primary"> {{people['RFC']}} </h3> 
+            <h4> {{people.FechaNacimiento | date}}</h4>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button color="warn" (click)="delete(people)">Eliminar</button>
+            <button class="btn btn-primary" [routerLink]="['/home/upd-persona/',people.IdPersonaFisica]" color="primary">Actualizar</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+
+</div>
+
+
+
+

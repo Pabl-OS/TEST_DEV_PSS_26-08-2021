@@ -1,0 +1,72 @@
+
+
+<div class="container">
+  <h1 class="title"> TABLA DE REPORTE DE API TOKA </h1>
+
+  <div class="mat-elevation-z8 example-container">
+      <div>
+          <button mat-button class="button-excel"(click)="exporter.exportTable('xlsx')" ><mat-icon>save_alt</mat-icon> Generar XLSX </button>
+      </div>
+      <table  mat-table matTableExporter [dataSource]="dataSource" #exporter="matTableExporter">
+        <!-- Position Column -->
+        <ng-container matColumnDef="IdCliente">
+          <th mat-header-cell *matHeaderCellDef>Id Cliente </th>
+          <td mat-cell *matCellDef="let data"> {{data['IdCliente']}} </td>
+        </ng-container>
+        <ng-container matColumnDef="FechaRegistroEmpresa">
+          <th mat-header-cell *matHeaderCellDef>Fecha Registro E</th>
+          <td mat-cell *matCellDef="let data"> {{data['FechaRegistroEmpresa']}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="RazonSocial">
+          <th mat-header-cell *matHeaderCellDef> Razon Social </th>
+          <td mat-cell *matCellDef="let data"> {{data['RazonSocial']}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="RFC">
+          <th mat-header-cell *matHeaderCellDef> RFC</th>
+          <td mat-cell *matCellDef="let data"> {{data['RFC']}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="Sucursal">
+          <th mat-header-cell *matHeaderCellDef>Sucursal </th>
+          <td mat-cell *matCellDef="let data"> {{data['Sucursal']}} </td>
+        </ng-container>
+    
+    
+        <ng-container matColumnDef="IdEmpleado">
+          <th mat-header-cell *matHeaderCellDef> IdEmpleado </th>
+          <td mat-cell *matCellDef="let data"> {{data['IdEmpleado']}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="Nombre">
+          <th mat-header-cell *matHeaderCellDef> Nombre</th>
+          <td mat-cell *matCellDef="let data"> {{data['Nombre']}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="Paterno">
+          <th mat-header-cell *matHeaderCellDef>Paterno </th>
+          <td mat-cell *matCellDef="let data"> {{data['Paterno']}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="Materno">
+          <th mat-header-cell *matHeaderCellDef> Materno</th>
+          <td mat-cell *matCellDef="let data"> {{data['Materno']}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="IdViaje">
+          <th mat-header-cell *matHeaderCellDef>IdViaje </th>
+          <td mat-cell *matCellDef="let data"> {{data['IdViaje']}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    
+      <mat-paginator [pageSizeOptions]="[10, 20]"
+                     showFirstLastButtons 
+                     aria-label="Select page of periodic elements">
+      </mat-paginator>
+    </div>
+</div>
+

@@ -1,0 +1,26 @@
+
+.card {
+    border: none;
+    border-radius: 0;
+    width: 420px !important;
+    margin: 0 auto
+}
+
+.signup {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding: 10px 50px
+}
+
+
+input {
+    width: 100%;
+    display: block;
+    margin-bottom: 7px
+}
+
+.form-control {
+    background-color: rgba(0, 0, 0, .075);
+    letter-spacing: 1px
+}

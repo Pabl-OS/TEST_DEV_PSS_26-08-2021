@@ -6,7 +6,7 @@ const findRFC = async (rfc) =>{
         db.query(`SELECT * FROM tb_personasfisicas WHERE RFC= '${rfc}'`,(err,rows)=>{
             if (err) reject(err)
             resolve(rows[0]);
-        })
+        })  
 
     })
 }
@@ -44,7 +44,7 @@ const registerPeople = async({
     return new Promise((resolve, reject)=>{
         db.query(`INSERT INTO tb_personasfisicas (IdPersonaFisica,FechaRegistro,FechaActualizacion,Nombre,ApellidoPaterno,ApellidoMaterno,RFC,FechaNacimiento, UsuarioAgrega, Activo) 
                  VALUES (NULL, (select CURDATE()), '', '${Nombre}', '${ApellidoPaterno}', '${ApellidoMaterno}', '${RFC}', 
-                         '${FechaNacimiento}', '${UsuarioAgrega}', '${Activo}')`,(err,res)=>{
+                         '${FechaNacimiento}', '1', '1')`,(err,res)=>{
                 if (err) reject(err)
               resolve(res.insertId);
         })
@@ -74,7 +74,7 @@ const updatePeople = async({
 
     })
 }
-const deletePeople = async({ IdPersonaFisica}) =>{
+const deletePeople = async( IdPersonaFisica) =>{
     return new Promise((resolve, reject)=>{
         db.query(`DELETE FROM tb_personasfisicas WHERE tb_personasfisicas.IdPersonaFisica = ${IdPersonaFisica}`,(err,res)=>{
                 if (err) reject(err)
