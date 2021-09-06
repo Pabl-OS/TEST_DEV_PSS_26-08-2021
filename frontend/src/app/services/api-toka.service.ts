@@ -13,7 +13,7 @@ export class ApiTokaService {
   getToken(){
     return new HttpHeaders({
     'Content-Type': 'application/json',
-      'Bearer':`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2Mjk5MzU3MDAsImV4cCI6MTYzMDAyMjEwMH0.yMRysCm0n5ql3CqSQ6bI2-3PFdzl4teNm0qqjjeanaM`
+      'Bearer':`${localStorage.getItem('token')}`
     });
  
   }

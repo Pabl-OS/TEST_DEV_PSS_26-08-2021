@@ -4,17 +4,20 @@
     border: none;
     border-radius: 0;
     width: 420px !important;
-    margin: 0 auto
+    margin: 0 auto;
+    background-color: #000!important;
 }
 
 .signup {
     display: flex;
     flex-flow: column;
     justify-content: center;
-    padding: 10px 50px
+    padding: 10px 50px;
+ 
 }
-
-
+h1{
+    color: teal!important;
+}
 input {
     width: 100%;
     display: block;
@@ -22,6 +25,6 @@ input {
 }
 
 .form-control {
-    background-color: rgba(0, 0, 0, .075);
+
     letter-spacing: 1px
 }
